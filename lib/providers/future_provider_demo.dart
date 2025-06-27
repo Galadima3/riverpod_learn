@@ -18,8 +18,7 @@ class FutureProviderDemo extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Watch the FutureProvider and handle the AsyncValue states.
-    final todosAsyncValue = ref.watch(todosProvider);
+    final todos = ref.watch(todosProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -27,7 +26,7 @@ class FutureProviderDemo extends ConsumerWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: todosAsyncValue.when(
+        child: todos.when(
           data: (todos) => ListView.builder(
             itemCount: todos.length,
             itemBuilder: (context, index) => ListTile(

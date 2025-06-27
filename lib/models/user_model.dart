@@ -9,8 +9,4 @@ class UserModel {
     required this.phone,
   });
 
-  @override
-  String toString() {
-    return 'UserModel(name: $name, email: $email, phone: $phone)';
-  }
 }

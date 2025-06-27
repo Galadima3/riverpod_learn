@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-Stream<int> counterStream() {
-  return Stream.periodic(const Duration(seconds: 1), (i) => i);
-}
+Stream<int> counterStream() =>
+    Stream.periodic(const Duration(seconds: 1), (i) => i);
 
 final streamCounterProvider = StreamProvider.autoDispose<int>((ref) {
   return counterStream();
 });
-
 
 class StreamCounterWidget extends ConsumerWidget {
   const StreamCounterWidget({super.key});
@@ -32,7 +30,11 @@ class StreamCounterWidget extends ConsumerWidget {
       ),
       body: Center(
         child: counter.when(
-          data: (count) => Text('Count: $count', style: Theme.of(context).textTheme.headlineMedium),
+          data:
+              (count) => Text(
+                'Count: $count',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
           loading: () => const CircularProgressIndicator(),
           error: (error, stackTrace) => Text('Error: $error'),
         ),

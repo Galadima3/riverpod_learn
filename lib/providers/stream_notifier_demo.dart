@@ -6,7 +6,6 @@ class LiveCounterNotifier extends AutoDisposeStreamNotifier<int> {
   Stream<int> build() async* {
     yield* Stream.periodic(const Duration(seconds: 1), (i) => i);
   }
-
   void restart() {
     ref.invalidateSelf();
   }
@@ -22,7 +21,6 @@ class StreamNotifierDemo extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Watch the provider to get the AsyncValue.
     final liveCount = ref.watch(liveCounterProvider);
 
     return Scaffold(
