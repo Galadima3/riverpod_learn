@@ -24,8 +24,8 @@ Each implementation is isolated and structured for clarity and reusability.
 To run this project locally:
 
 ```bash
-git clone https://github.com/your-username/riverpod-learn-app.git
-cd riverpod-learn-app
+https://github.com/Galadima3/riverpod_learn.git
+cd riverpod_learn
 flutter pub get
 flutter run
 ```
