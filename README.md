@@ -26,6 +26,7 @@ To run this project locally:
 ```bash
 https://github.com/Galadima3/riverpod_learn.git
 cd riverpod_learn
+code .
 flutter pub get
 flutter run
 ```
